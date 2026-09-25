@@ -1,0 +1,6 @@
+id: 09_seo_performance_skill
+domain: software
+when_to_use:
+- un audit SEO, accessibilité ou Core Web Vitals est nécessaire avant ou après mise
+  en ligne
+source_agent: DOMAINS/software/agents/09_seo_performance/agent.yaml

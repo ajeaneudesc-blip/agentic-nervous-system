@@ -1,0 +1,29 @@
+id: 06_qa
+name: QA / Test
+purpose: construire et exécuter les tests unitaires, intégration et E2E
+requires_human: false
+tier: specialist
+requires_human_for:
+- level_3
+- level_4
+inputs:
+- source_code
+- spec
+- ux_acceptance_criteria
+outputs:
+- test_suite
+- test_report
+skills:
+- 06_qa_skill
+tools:
+- read_context
+- write_project_files
+- run_tests
+- write_test_reports
+inspiration:
+  repo: https://github.com/Codium-ai/pr-agent
+  pattern: >
+    analyse de pull requests, génération de tests unitaires et scoring de
+    qualité de code ; repris comme checklist QA (couverture, génération de
+    tests, rapport structuré), pas comme dépendance logicielle (aucun
+    clone, exécution 100% Claude Code, cf. CLAUDE.md racine).

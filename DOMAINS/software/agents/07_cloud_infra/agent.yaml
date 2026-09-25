@@ -1,0 +1,28 @@
+id: 07_cloud_infra
+name: Cloud & Infrastructure
+purpose: préparer IaC, environnement, DNS et déploiement
+requires_human: false
+tier: specialist
+requires_human_for:
+- level_3
+- level_4
+inputs:
+- spec
+- source_code
+outputs:
+- iac_plan
+- deployment_plan
+skills:
+- 07_cloud_infra_skill
+tools:
+- read_context
+- write_project_files
+- terraform_plan
+- request_production_apply
+inspiration:
+  repo: https://github.com/All-Hands-AI/OpenHands
+  pattern: >
+    accès terminal sandbox pour préparer IaC et environnement avant
+    application ; repris comme boucle plan -> validation humaine -> apply,
+    pas comme dépendance logicielle (aucun clone, exécution 100% Claude
+    Code, cf. CLAUDE.md racine).

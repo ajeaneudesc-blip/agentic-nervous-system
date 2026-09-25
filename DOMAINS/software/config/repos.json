@@ -1,0 +1,66 @@
+{
+  "_comment": "Référence de stack technique pour la delivery software. N'est plus un registre à cloner pour un pont Codex/n8n : entrées LangChain/LangGraph, n8n, AutoGPT, browser-use et les *-mcp ont été retirées (orchestration et accès MCP sont maintenant natifs à Claude Code / Claude Desktop).",
+  "clone_depth": 1,
+  "repositories": [
+    {
+      "id": "shadcn-ui",
+      "url": "https://github.com/shadcn-ui/ui.git",
+      "role": "ux"
+    },
+    {
+      "id": "prisma",
+      "url": "https://github.com/prisma/prisma.git",
+      "role": "data"
+    },
+    {
+      "id": "supabase",
+      "url": "https://github.com/supabase/supabase.git",
+      "role": "data"
+    },
+    {
+      "id": "ruff",
+      "url": "https://github.com/astral-sh/ruff.git",
+      "role": "security_quality"
+    },
+    {
+      "id": "biome",
+      "url": "https://github.com/biomejs/biome.git",
+      "role": "security_quality"
+    },
+    {
+      "id": "playwright",
+      "url": "https://github.com/microsoft/playwright.git",
+      "role": "qa"
+    },
+    {
+      "id": "terraform",
+      "url": "https://github.com/hashicorp/terraform.git",
+      "role": "infra"
+    },
+    {
+      "id": "vercel-ai",
+      "url": "https://github.com/vercel/ai.git",
+      "role": "infra_ai"
+    },
+    {
+      "id": "stripe-node",
+      "url": "https://github.com/stripe/stripe-node.git",
+      "role": "billing"
+    },
+    {
+      "id": "stripe-agent-toolkit",
+      "url": "https://github.com/stripe/agent-toolkit.git",
+      "role": "billing"
+    },
+    {
+      "id": "lighthouse",
+      "url": "https://github.com/GoogleChrome/lighthouse.git",
+      "role": "seo"
+    },
+    {
+      "id": "sentry",
+      "url": "https://github.com/getsentry/sentry.git",
+      "role": "sre"
+    }
+  ]
+}

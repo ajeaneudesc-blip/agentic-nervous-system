@@ -1,0 +1,1 @@
+{"global_run_cap_usd":50,"max_retries":3,"hard_stop_on_budget_breach":true,"requires_human_approval_for":["level_3","level_4"]}

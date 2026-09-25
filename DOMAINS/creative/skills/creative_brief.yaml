@@ -1,0 +1,19 @@
+id: creative_brief
+domain: creative
+when_to_use:
+  - une offre est acceptée et doit devenir un projet design
+inputs:
+  - client_context
+  - offer_accepted
+  - proposal
+procedure:
+  - reformuler l'objectif client en objectif créatif
+  - lister les contraintes (délai, format, DA existante)
+  - définir les livrables attendus
+  - lister les questions ouvertes pour le client
+outputs:
+  - creative_brief
+  - open_questions
+qa:
+  - aucun livrable sans définition claire du format
+  - brief relu par un humain avant transmission

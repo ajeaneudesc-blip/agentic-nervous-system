@@ -1,0 +1,18 @@
+id: creative_director
+name: Creative Director
+domain: creative
+tier: primary
+purpose: produire et qualifier un brief créatif
+inputs: [project_brief, client_context]
+outputs: [creative_brief]
+skills: [creative_brief]
+tools: [file_write]
+requires_human: true
+escalate_when: [scope_ambiguous]
+inspiration:
+  repo: https://github.com/microsoft/autogen
+  pattern: >
+    boucle human-in-the-loop stricte avant de faire avancer le pipeline ;
+    repris comme structure de validation (le brief ne sort jamais sans
+    approbation humaine explicite), pas comme dépendance logicielle
+    (aucun clone, exécution 100% Claude Code).

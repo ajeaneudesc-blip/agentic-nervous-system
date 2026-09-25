@@ -1,0 +1,6 @@
+id: 08_billing_skill
+domain: software
+when_to_use:
+- un abonnement, un webhook ou une intégration Stripe doivent être conçus
+- une activation live de facturation doit être demandée pour approbation humaine
+source_agent: DOMAINS/software/agents/08_billing/agent.yaml

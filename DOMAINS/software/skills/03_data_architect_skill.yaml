@@ -1,0 +1,7 @@
+id: 03_data_architect_skill
+domain: software
+when_to_use:
+- un schéma de données, des migrations ou des contrats de données doivent être conçus
+- une question de sécurité ou de confidentialité des données doit être tranchée avant
+  implémentation
+source_agent: DOMAINS/software/agents/03_data_architect/agent.yaml

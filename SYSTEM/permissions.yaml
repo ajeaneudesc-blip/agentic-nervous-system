@@ -1,0 +1,47 @@
+# Source of truth for action levels / human gates across the whole system.
+levels:
+  0:
+    name: Observer
+    autonomous: true
+    requires_gate: false
+  1:
+    name: Préparer
+    autonomous: true
+    requires_gate: false
+  2:
+    name: Exécuter réversible
+    autonomous: true
+    requires_gate: false
+  3:
+    name: Effet externe
+    autonomous: false
+    requires_gate: true
+  4:
+    name: Conséquent
+    autonomous: false
+    requires_gate: true
+
+default_deny_above: 2
+
+action_levels:
+  read_context: 0
+  crm_read: 0
+  file_write: 1
+  write_code: 2
+  write_project_files: 2
+  write_spec: 1
+  request_approval: 1
+  run_local_tests: 2
+  run_tests: 2
+  write_test_reports: 2
+  terraform_plan: 2
+  prepare_stripe_changes: 2
+  prepare_deploy: 2
+  request_production_apply: 3
+  request_live_activation: 4
+  request_production_deploy: 4
+  secrets_read_raw: 4
+  production_destructive_actions: 4
+  crm_write: 3
+  send_external_message: 3
+  publish_external: 3

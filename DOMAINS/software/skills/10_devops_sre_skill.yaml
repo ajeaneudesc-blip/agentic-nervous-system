@@ -1,0 +1,7 @@
+id: 10_devops_sre_skill
+domain: software
+when_to_use:
+- un pipeline CI/CD ou une observabilité doivent être mis en place
+- un déploiement conséquent doit être préparé avec un plan de rollback avant demande
+  d'approbation
+source_agent: DOMAINS/software/agents/10_devops_sre/agent.yaml

@@ -1,0 +1,18 @@
+id: commercial_scout
+name: Commercial Director / Scout
+domain: commercial
+tier: primary
+purpose: identifier, qualifier et orienter des prospects vers une offre créative ou software
+inputs: [objective, icp, service_offerings]
+outputs: [prospect_list, qualification_scores, delivery_recommendations]
+skills: [prospect_scoring, solution_qualification]
+tools: [crm_read, crm_write]
+requires_human: false
+escalate_when: [missing_icp, legal_risk]
+inspiration:
+  repo: https://github.com/Significant-Gravitas/AutoGPT
+  pattern: >
+    boucle autonome recherche web -> qualification -> décision, avec mémoire
+    de session entre itérations ; repris comme structure de raisonnement pour
+    la recherche/qualification de prospects, pas comme dépendance logicielle
+    (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).

@@ -1,0 +1,18 @@
+id: prospect_scoring
+domain: commercial
+when_to_use:
+  - nouvelle liste de prospects à qualifier
+inputs:
+  - prospect_list
+  - icp
+procedure:
+  - vérifier fit ICP
+  - vérifier signal d'intérêt/urgence
+  - attribuer un score 1-5
+  - retenir les 3 meilleurs
+outputs:
+  - qualification_scores
+  - top_3_prospects
+qa:
+  - score justifié par au moins un critère observable
+  - pas de prospect dupliqué avec le CRM

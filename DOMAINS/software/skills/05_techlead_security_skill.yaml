@@ -1,0 +1,6 @@
+id: 05_techlead_security_skill
+domain: software
+when_to_use:
+- du code ou une architecture doivent être revus avant merge ou déploiement
+- une dépendance ou un choix technique présente un risque de sécurité à qualifier
+source_agent: DOMAINS/software/agents/05_techlead_security/agent.yaml

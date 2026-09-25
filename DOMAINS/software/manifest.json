@@ -1,0 +1,7 @@
+{
+  "name": "DOMAINS/software",
+  "version": "0.1.0",
+  "parent_system": "Unified Agentic Nervous System",
+  "purpose": "controlled software delivery execution layer",
+  "repository_sources": "config/repos.json"
+}

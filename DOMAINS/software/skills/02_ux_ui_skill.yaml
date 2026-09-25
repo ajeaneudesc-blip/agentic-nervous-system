@@ -1,0 +1,6 @@
+id: 02_ux_ui_skill
+domain: software
+when_to_use:
+- une spec validée doit devenir des écrans, un parcours et du copy
+- des critères d'acceptation UX doivent être définis avant développement
+source_agent: DOMAINS/software/agents/02_ux_ui/agent.yaml

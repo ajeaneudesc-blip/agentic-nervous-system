@@ -1,0 +1,86 @@
+# Carte de contexte — objectif -> ensemble minimal de fichiers à lire
+# Ne jamais faire router Claude par exploration : chaque entrée déclarée
+# ici doit suffire à couvrir le cas d'usage correspondant. Le budget
+# ci-dessous est indicatif — appliqué directement par Claude, sans script
+# de validation séparé.
+
+version: 1
+
+routes:
+
+  DAILY-COMMERCIAL:
+    domain: commercial
+    read:
+      - CLAUDE.md
+      - RUNTIME/state.json
+      - DOMAINS/commercial/data/crm.csv
+      - DOMAINS/commercial/data/pipeline.csv
+      - DOMAINS/commercial/playbooks/daily_commercial.md
+    never_read:
+      - LEGACY/
+      - DOMAINS/creative/
+
+  PROSPECT-TO-OFFER:
+    domain: commercial
+    read:
+      - CLAUDE.md
+      - RUNTIME/state.json
+      - DOMAINS/commercial/skills/outreach.yaml
+      - DOMAINS/commercial/skills/solution_qualification.yaml
+      - DOMAINS/commercial/data/crm.csv
+    never_read:
+      - LEGACY/
+
+  COMMERCIAL-TO-CREATIVE:
+    domain: commercial
+    read:
+      - CLAUDE.md
+      - RUNTIME/state.json
+      - DOMAINS/commercial/skills/solution_qualification.yaml
+      - DOMAINS/creative/playbooks/brief_creation.md
+      - PROJECTS/<project_id>/brief.md
+    never_read:
+      - LEGACY/
+
+  COMMERCIAL-TO-SOFTWARE:
+    domain: commercial
+    read:
+      - CLAUDE.md
+      - RUNTIME/state.json
+      - DOMAINS/commercial/skills/solution_qualification.yaml
+      - DOMAINS/software/CLAUDE.md
+      - DOMAINS/software/agents/01_product_owner/agent.yaml
+      - PROJECTS/<project_id>/brief.md
+    never_read:
+      - LEGACY/
+
+  CREATIVE-BRIEF:
+    domain: creative
+    read:
+      - CLAUDE.md
+      - RUNTIME/state.json
+      - DOMAINS/creative/playbooks/
+      - PROJECTS/<project_id>/brief.md
+    never_read:
+      - LEGACY/
+      - DOMAINS/commercial/data/
+
+  SOFTWARE-PROJECT:
+    domain: platform
+    read:
+      - CLAUDE.md
+      - RUNTIME/state.json
+      - DOMAINS/software/CLAUDE.md
+      - DOMAINS/software/GUARDRAILS.md
+      - DOMAINS/software/config/budget.json
+      - DOMAINS/software/config/agent_permissions/permissions.json
+      - PROJECTS/<project_id>/brief.md
+    never_read:
+      - LEGACY/
+    note: >
+      Utiliser DOMAINS/software pour l'exécution technique ; Claude Code
+      exécute directement, pas de pont externe (n8n/Codex).
+
+budget:
+  max_files_per_packet: 12
+  max_tokens_per_packet: 6000

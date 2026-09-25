@@ -1,0 +1,7 @@
+id: 01_product_owner_skill
+domain: software
+when_to_use:
+- un objectif logiciel doit être transformé en spec exécutable
+- un run software doit être découpé en tâches pour les rôles spécialistes
+- une action de niveau 3-4 doit être formulée pour approbation humaine
+source_agent: DOMAINS/software/agents/01_product_owner/agent.yaml

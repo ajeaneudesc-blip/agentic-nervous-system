@@ -1,0 +1,26 @@
+id: 09_seo_performance
+name: SEO & Performance
+purpose: auditer SEO, accessibilité, performance et Core Web Vitals
+requires_human: false
+tier: specialist
+requires_human_for:
+- level_3
+- level_4
+inputs:
+- source_code
+- deployed_url
+outputs:
+- seo_audit
+- performance_report
+skills:
+- 09_seo_performance_skill
+tools:
+- read_context
+- write_project_files
+inspiration:
+  repo: https://github.com/Significant-Gravitas/AutoGPT
+  pattern: >
+    audit de sites en direct via web scraping pour vérifier accessibilité
+    et performance ; repris comme méthode d'audit (scraping ciblé +
+    scoring), pas comme dépendance logicielle (aucun clone, exécution 100%
+    Claude Code, cf. CLAUDE.md racine).

@@ -1,0 +1,21 @@
+id: solution_qualification
+domain: commercial
+when_to_use:
+  - un prospect qualifié doit être orienté vers une offre créative ou software
+inputs:
+  - qualified_prospect
+  - observed_need
+  - available_proof
+procedure:
+  - documenter le besoin et les signaux observables
+  - recommander creative ou software selon le livrable principal attendu
+  - préparer un résumé de handoff avec objectif, périmètre, contraintes et preuves
+  - demander validation humaine si le besoin, le prix ou le périmètre reste ambigu
+outputs:
+  - recommended_domain
+  - proposed_offer
+  - project_handoff_summary
+qa:
+  - ne pas inventer de besoin, preuve ou résultat
+  - ne pas promettre de prix, délai ou fonctionnalité non validés
+  - ne créer un projet d'exécution qu'après accord client

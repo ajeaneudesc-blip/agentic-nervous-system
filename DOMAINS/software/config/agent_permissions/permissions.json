@@ -1,0 +1,118 @@
+{
+  "_comment": "Allowlist d'outils/actions par agent Software uniquement. Complète SYSTEM/permissions.yaml (racine), qui définit les niveaux 0-4 nécessitant un gate humain pour tout le système. Un agent listé ici comme autorisé pour une action reste quand même bloqué par un gate niveau 3-4 tant que l'approbation humaine n'est pas enregistrée.",
+  "default": "deny",
+  "agents": {
+    "01_product_owner": {
+      "allow": [
+        "read_context",
+        "write_project_files",
+        "write_spec",
+        "request_approval"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "02_ux_ui": {
+      "allow": [
+        "read_context",
+        "write_project_files"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "03_data_architect": {
+      "allow": [
+        "read_context",
+        "write_project_files"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "04_fullstack": {
+      "allow": [
+        "read_context",
+        "write_project_files",
+        "write_code",
+        "run_local_tests"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "05_techlead_security": {
+      "allow": [
+        "read_context",
+        "write_project_files"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "06_qa": {
+      "allow": [
+        "read_context",
+        "write_project_files",
+        "run_tests",
+        "write_test_reports"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "07_cloud_infra": {
+      "allow": [
+        "read_context",
+        "write_project_files",
+        "terraform_plan",
+        "request_production_apply"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "08_billing": {
+      "allow": [
+        "read_context",
+        "write_project_files",
+        "prepare_stripe_changes",
+        "request_live_activation"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "09_seo_performance": {
+      "allow": [
+        "read_context",
+        "write_project_files"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    },
+    "10_devops_sre": {
+      "allow": [
+        "read_context",
+        "write_project_files",
+        "prepare_deploy",
+        "request_production_deploy"
+      ],
+      "deny": [
+        "secrets_read_raw",
+        "production_destructive_actions"
+      ]
+    }
+  }
+}

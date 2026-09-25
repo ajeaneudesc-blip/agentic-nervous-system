@@ -1,0 +1,489 @@
+{
+  "_comment": "Régénéré par scripts/build_registry.py depuis DOMAINS/*/agents/*.yaml — ne jamais éditer à la main.",
+  "agents": [
+    {
+      "id": "commercial_scout",
+      "name": "Commercial Director / Scout",
+      "domain": "commercial",
+      "tier": "primary",
+      "purpose": "identifier, qualifier et orienter des prospects vers une offre créative ou software",
+      "inputs": [
+        "objective",
+        "icp",
+        "service_offerings"
+      ],
+      "outputs": [
+        "prospect_list",
+        "qualification_scores",
+        "delivery_recommendations"
+      ],
+      "skills": [
+        "prospect_scoring",
+        "solution_qualification"
+      ],
+      "tools": [
+        "crm_read",
+        "crm_write"
+      ],
+      "requires_human": false,
+      "escalate_when": [
+        "missing_icp",
+        "legal_risk"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/Significant-Gravitas/AutoGPT",
+        "pattern": "boucle autonome recherche web -> qualification -> décision, avec mémoire de session entre itérations ; repris comme structure de raisonnement pour la recherche/qualification de prospects, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "requires_human_for": [],
+      "source_path": "DOMAINS\\commercial\\agents\\commercial_scout.yaml"
+    },
+    {
+      "id": "outreach_writer",
+      "name": "Outreach Writer",
+      "domain": "commercial",
+      "tier": "specialist",
+      "purpose": "write personalized outreach drafts",
+      "inputs": [
+        "prospect",
+        "offer",
+        "proof",
+        "channel"
+      ],
+      "outputs": [
+        "message_draft"
+      ],
+      "skills": [
+        "outreach"
+      ],
+      "tools": [
+        "crm_read",
+        "file_write"
+      ],
+      "requires_human": false,
+      "escalate_when": [
+        "missing_proof",
+        "legal_risk",
+        "pricing_question"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/joaomdmoura/crewAI",
+        "pattern": "définition de personas de rédaction (rôle, ton, objectif) et génération de campagnes personnalisées par segment ; repris comme gabarit de persona/ton pour la rédaction outreach, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code).\n"
+      },
+      "requires_human_for": [],
+      "source_path": "DOMAINS\\commercial\\agents\\outreach_writer.yaml"
+    },
+    {
+      "id": "creative_director",
+      "name": "Creative Director",
+      "domain": "creative",
+      "tier": "primary",
+      "purpose": "produire et qualifier un brief créatif",
+      "inputs": [
+        "project_brief",
+        "client_context"
+      ],
+      "outputs": [
+        "creative_brief"
+      ],
+      "skills": [
+        "creative_brief"
+      ],
+      "tools": [
+        "file_write"
+      ],
+      "requires_human": true,
+      "escalate_when": [
+        "scope_ambiguous"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/microsoft/autogen",
+        "pattern": "boucle human-in-the-loop stricte avant de faire avancer le pipeline ; repris comme structure de validation (le brief ne sort jamais sans approbation humaine explicite), pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code).\n"
+      },
+      "requires_human_for": [],
+      "source_path": "DOMAINS\\creative\\agents\\creative_director.yaml"
+    },
+    {
+      "id": "01_product_owner",
+      "name": "Product Owner / Orchestrator",
+      "purpose": "transformer l'objectif utilisateur en spec exécutable et coordonner le run",
+      "requires_human": false,
+      "tier": "primary",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "objective",
+        "project_brief",
+        "budget_limit_usd"
+      ],
+      "outputs": [
+        "spec",
+        "task_breakdown",
+        "approval_requests"
+      ],
+      "skills": [
+        "01_product_owner_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files",
+        "write_spec",
+        "request_approval"
+      ],
+      "playbooks": [
+        "blueprint",
+        "context-budget",
+        "delivery-gate",
+        "dev-team",
+        "jira-integration",
+        "living-docs-governance",
+        "orch-add-feature",
+        "orch-build-mvp",
+        "orch-change-feature",
+        "orch-fix-defect",
+        "orch-pipeline",
+        "orch-refine-code",
+        "plan-canvas",
+        "plan-orchestrate",
+        "product-capability",
+        "product-lens",
+        "team-builder",
+        "token-budget-advisor",
+        "agent:chief-of-staff",
+        "agent:doc-updater",
+        "agent:planner",
+        "agent:spec-miner"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/geekan/MetaGPT",
+        "pattern": "rôle \"Product Manager\" qui transforme un objectif en PRD structuré puis orchestre les rôles suivants ; repris comme gabarit spec -> task breakdown -> approbations, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\01_product_owner\\agent.yaml"
+    },
+    {
+      "id": "02_ux_ui",
+      "name": "UX/UI & Copywriter",
+      "purpose": "définir l'expérience, les écrans, le copy et les critères UX",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "spec",
+        "brand_guidelines"
+      ],
+      "outputs": [
+        "wireframes",
+        "copy",
+        "ux_acceptance_criteria"
+      ],
+      "skills": [
+        "02_ux_ui_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files"
+      ],
+      "playbooks": [
+        "accessibility",
+        "design-system",
+        "frontend-a11y",
+        "frontend-design-direction",
+        "frontend-slides",
+        "ios-icon-gen",
+        "liquid-glass-design",
+        "make-interfaces-feel-better",
+        "motion-advanced",
+        "motion-foundations",
+        "motion-patterns",
+        "taste",
+        "taste-application",
+        "taste-distillation",
+        "ui-demo",
+        "ui-to-vue",
+        "agent:a11y-architect"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/OpenBMB/ChatDev",
+        "pattern": "simulation d'entreprise virtuelle avec rôles designer/copywriter dédiés à l'expérience utilisateur ; repris comme gabarit de livrables (wireframes + copy + critères d'acceptation UX), pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\02_ux_ui\\agent.yaml"
+    },
+    {
+      "id": "03_data_architect",
+      "name": "Data Architect",
+      "purpose": "concevoir schéma, migrations, sécurité des données et contrats",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "spec",
+        "data_requirements"
+      ],
+      "outputs": [
+        "schema",
+        "migrations",
+        "data_contracts"
+      ],
+      "skills": [
+        "03_data_architect_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/geekan/MetaGPT",
+        "pattern": "rôle \"Architect\" qui produit schémas et diagrammes système structurés à partir d'un PRD ; repris comme gabarit de sortie (schéma + migrations + contrats de données formalisés), pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\03_data_architect\\agent.yaml"
+    },
+    {
+      "id": "04_fullstack",
+      "name": "Fullstack Developer",
+      "purpose": "implémenter frontend/backend et intégrations",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "spec",
+        "schema",
+        "wireframes"
+      ],
+      "outputs": [
+        "source_code",
+        "integration_notes"
+      ],
+      "skills": [
+        "04_fullstack_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files",
+        "write_code",
+        "run_local_tests"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/All-Hands-AI/OpenHands",
+        "pattern": "agent développeur avec accès terminal sandbox pour écrire, exécuter et corriger du code de bout en bout ; repris comme boucle implémentation -> exécution locale -> correction, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\04_fullstack\\agent.yaml"
+    },
+    {
+      "id": "05_techlead_security",
+      "name": "Tech Lead & Security",
+      "purpose": "review architecture, dépendances, sécurité et qualité",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "source_code",
+        "spec"
+      ],
+      "outputs": [
+        "review_report",
+        "security_findings"
+      ],
+      "skills": [
+        "05_techlead_security_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/Pythagora-io/gpt-pilot",
+        "pattern": "rôle Tech Lead qui supervise et valide l'architecture de bout en bout avant de laisser le développement avancer ; repris comme gate de revue (architecture, sécurité, qualité) avant merge, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\05_techlead_security\\agent.yaml"
+    },
+    {
+      "id": "06_qa",
+      "name": "QA / Test",
+      "purpose": "construire et exécuter les tests unitaires, intégration et E2E",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "source_code",
+        "spec",
+        "ux_acceptance_criteria"
+      ],
+      "outputs": [
+        "test_suite",
+        "test_report"
+      ],
+      "skills": [
+        "06_qa_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files",
+        "run_tests",
+        "write_test_reports"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/Codium-ai/pr-agent",
+        "pattern": "analyse de pull requests, génération de tests unitaires et scoring de qualité de code ; repris comme checklist QA (couverture, génération de tests, rapport structuré), pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\06_qa\\agent.yaml"
+    },
+    {
+      "id": "07_cloud_infra",
+      "name": "Cloud & Infrastructure",
+      "purpose": "préparer IaC, environnement, DNS et déploiement",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "spec",
+        "source_code"
+      ],
+      "outputs": [
+        "iac_plan",
+        "deployment_plan"
+      ],
+      "skills": [
+        "07_cloud_infra_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files",
+        "terraform_plan",
+        "request_production_apply"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/All-Hands-AI/OpenHands",
+        "pattern": "accès terminal sandbox pour préparer IaC et environnement avant application ; repris comme boucle plan -> validation humaine -> apply, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\07_cloud_infra\\agent.yaml"
+    },
+    {
+      "id": "08_billing",
+      "name": "Billing / Stripe",
+      "purpose": "concevoir et intégrer abonnements, webhooks et billing",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "spec",
+        "pricing_model"
+      ],
+      "outputs": [
+        "billing_integration",
+        "webhook_config"
+      ],
+      "skills": [
+        "08_billing_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files",
+        "prepare_stripe_changes",
+        "request_live_activation"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/geekan/MetaGPT",
+        "pattern": "exécution rigoureuse de procédures opérationnelles standards (SOP) ; repris comme checklist stricte pour toute intégration financière (webhooks, abonnements) avant activation live, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\08_billing\\agent.yaml"
+    },
+    {
+      "id": "09_seo_performance",
+      "name": "SEO & Performance",
+      "purpose": "auditer SEO, accessibilité, performance et Core Web Vitals",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "source_code",
+        "deployed_url"
+      ],
+      "outputs": [
+        "seo_audit",
+        "performance_report"
+      ],
+      "skills": [
+        "09_seo_performance_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/Significant-Gravitas/AutoGPT",
+        "pattern": "audit de sites en direct via web scraping pour vérifier accessibilité et performance ; repris comme méthode d'audit (scraping ciblé + scoring), pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\09_seo_performance\\agent.yaml"
+    },
+    {
+      "id": "10_devops_sre",
+      "name": "DevOps / SRE",
+      "purpose": "CI/CD, observabilité, incidents, rollback et post-deployment checks",
+      "requires_human": false,
+      "tier": "specialist",
+      "requires_human_for": [
+        "level_3",
+        "level_4"
+      ],
+      "inputs": [
+        "iac_plan",
+        "deployment_plan",
+        "rollback_plan"
+      ],
+      "outputs": [
+        "ci_cd_pipeline",
+        "observability_config",
+        "deploy_report"
+      ],
+      "skills": [
+        "10_devops_sre_skill"
+      ],
+      "tools": [
+        "read_context",
+        "write_project_files",
+        "prepare_deploy",
+        "request_production_deploy"
+      ],
+      "inspiration": {
+        "repo": "https://github.com/All-Hands-AI/OpenHands",
+        "pattern": "intégration terminal profonde pour gérer CI/CD, scripts de déploiement et surveillance des logs ; repris comme boucle deploy -> observe -> rollback si besoin, pas comme dépendance logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md racine).\n"
+      },
+      "domain": "software",
+      "source_path": "DOMAINS\\software\\agents\\10_devops_sre\\agent.yaml"
+    }
+  ]
+}

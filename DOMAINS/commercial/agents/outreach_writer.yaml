@@ -1,0 +1,18 @@
+id: outreach_writer
+name: Outreach Writer
+domain: commercial
+tier: specialist
+purpose: write personalized outreach drafts
+inputs: [prospect, offer, proof, channel]
+outputs: [message_draft]
+skills: [outreach]
+tools: [crm_read, file_write]
+requires_human: false
+escalate_when: [missing_proof, legal_risk, pricing_question]
+inspiration:
+  repo: https://github.com/joaomdmoura/crewAI
+  pattern: >
+    définition de personas de rédaction (rôle, ton, objectif) et génération
+    de campagnes personnalisées par segment ; repris comme gabarit de
+    persona/ton pour la rédaction outreach, pas comme dépendance logicielle
+    (aucun clone, exécution 100% Claude Code).

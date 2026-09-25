@@ -1,0 +1,6 @@
+id: 06_qa_skill
+domain: software
+when_to_use:
+- du code implémenté doit être couvert par des tests unitaires/intégration/E2E
+- un rapport de tests est nécessaire avant de considérer une fonctionnalité livrable
+source_agent: DOMAINS/software/agents/06_qa/agent.yaml

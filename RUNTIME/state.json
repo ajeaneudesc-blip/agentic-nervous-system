@@ -1,0 +1,24 @@
+{
+  "system_version": "2.0",
+  "phase": "phase_0_pilot",
+  "last_updated": "2026-09-25T00:00:00Z",
+  "active_projects": [
+    "2026-P001-client-acquisition"
+  ],
+  "task_queue_status": {
+    "DAILY-COMMERCIAL": "empty"
+  },
+  "pending_gates": [],
+  "software": {
+    "enabled": true,
+    "path": "DOMAINS/software/",
+    "execution_engine": "Claude Code (Claude Desktop)"
+  },
+  "active_domains": [
+    "commercial",
+    "creative",
+    "software"
+  ],
+  "software_branch": "DOMAINS/software",
+  "software_mode": "integrated_domain_branch"
+}

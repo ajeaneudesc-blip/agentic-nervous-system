@@ -1,0 +1,29 @@
+id: 08_billing
+name: Billing / Stripe
+purpose: concevoir et intégrer abonnements, webhooks et billing
+requires_human: false
+tier: specialist
+requires_human_for:
+- level_3
+- level_4
+inputs:
+- spec
+- pricing_model
+outputs:
+- billing_integration
+- webhook_config
+skills:
+- 08_billing_skill
+tools:
+- read_context
+- write_project_files
+- prepare_stripe_changes
+- request_live_activation
+inspiration:
+  repo: https://github.com/geekan/MetaGPT
+  pattern: >
+    exécution rigoureuse de procédures opérationnelles standards (SOP) ;
+    repris comme checklist stricte pour toute intégration financière
+    (webhooks, abonnements) avant activation live, pas comme dépendance
+    logicielle (aucun clone, exécution 100% Claude Code, cf. CLAUDE.md
+    racine).

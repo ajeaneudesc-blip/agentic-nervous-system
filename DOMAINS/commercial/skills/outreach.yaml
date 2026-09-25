@@ -1,0 +1,21 @@
+id: outreach
+domain: commercial
+when_to_use:
+  - qualified prospect needs a first-contact draft
+inputs:
+  - prospect
+  - offer
+  - evidence
+procedure:
+  - inspect prospect
+  - select relevant proof
+  - write draft
+  - run safety checks
+outputs:
+  - draft_message
+  - rationale
+  - evidence_refs
+qa:
+  - no invented claims
+  - one clear CTA
+  - channel length limit

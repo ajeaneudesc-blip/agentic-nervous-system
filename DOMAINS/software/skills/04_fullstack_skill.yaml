@@ -1,0 +1,6 @@
+id: 04_fullstack_skill
+domain: software
+when_to_use:
+- une spec, un schéma et des wireframes sont prêts et doivent être implémentés
+- une intégration frontend/backend ou un correctif de code est nécessaire
+source_agent: DOMAINS/software/agents/04_fullstack/agent.yaml

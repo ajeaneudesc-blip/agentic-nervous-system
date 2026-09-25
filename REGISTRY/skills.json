@@ -1,0 +1,127 @@
+{
+  "_comment": "Régénéré par scripts/build_registry.py depuis DOMAINS/*/skills/*.yaml — ne jamais éditer à la main.",
+  "skills": [
+    {
+      "id": "outreach",
+      "domain": "commercial",
+      "when_to_use": [
+        "qualified prospect needs a first-contact draft"
+      ],
+      "source_path": "DOMAINS\\commercial\\skills\\outreach.yaml"
+    },
+    {
+      "id": "prospect_scoring",
+      "domain": "commercial",
+      "when_to_use": [
+        "nouvelle liste de prospects à qualifier"
+      ],
+      "source_path": "DOMAINS\\commercial\\skills\\prospect_scoring.yaml"
+    },
+    {
+      "id": "solution_qualification",
+      "domain": "commercial",
+      "when_to_use": [
+        "un prospect qualifié doit être orienté vers une offre créative ou software"
+      ],
+      "source_path": "DOMAINS\\commercial\\skills\\solution_qualification.yaml"
+    },
+    {
+      "id": "creative_brief",
+      "domain": "creative",
+      "when_to_use": [
+        "une offre est acceptée et doit devenir un projet design"
+      ],
+      "source_path": "DOMAINS\\creative\\skills\\creative_brief.yaml"
+    },
+    {
+      "id": "01_product_owner_skill",
+      "domain": "software",
+      "when_to_use": [
+        "un objectif logiciel doit être transformé en spec exécutable",
+        "un run software doit être découpé en tâches pour les rôles spécialistes",
+        "une action de niveau 3-4 doit être formulée pour approbation humaine"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\01_product_owner_skill.yaml"
+    },
+    {
+      "id": "02_ux_ui_skill",
+      "domain": "software",
+      "when_to_use": [
+        "une spec validée doit devenir des écrans, un parcours et du copy",
+        "des critères d'acceptation UX doivent être définis avant développement"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\02_ux_ui_skill.yaml"
+    },
+    {
+      "id": "03_data_architect_skill",
+      "domain": "software",
+      "when_to_use": [
+        "un schéma de données, des migrations ou des contrats de données doivent être conçus",
+        "une question de sécurité ou de confidentialité des données doit être tranchée avant implémentation"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\03_data_architect_skill.yaml"
+    },
+    {
+      "id": "04_fullstack_skill",
+      "domain": "software",
+      "when_to_use": [
+        "une spec, un schéma et des wireframes sont prêts et doivent être implémentés",
+        "une intégration frontend/backend ou un correctif de code est nécessaire"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\04_fullstack_skill.yaml"
+    },
+    {
+      "id": "05_techlead_security_skill",
+      "domain": "software",
+      "when_to_use": [
+        "du code ou une architecture doivent être revus avant merge ou déploiement",
+        "une dépendance ou un choix technique présente un risque de sécurité à qualifier"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\05_techlead_security_skill.yaml"
+    },
+    {
+      "id": "06_qa_skill",
+      "domain": "software",
+      "when_to_use": [
+        "du code implémenté doit être couvert par des tests unitaires/intégration/E2E",
+        "un rapport de tests est nécessaire avant de considérer une fonctionnalité livrable"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\06_qa_skill.yaml"
+    },
+    {
+      "id": "07_cloud_infra_skill",
+      "domain": "software",
+      "when_to_use": [
+        "un environnement, du DNS ou de l'infrastructure comme code doivent être préparés",
+        "une demande d'apply en production doit être formulée pour approbation humaine"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\07_cloud_infra_skill.yaml"
+    },
+    {
+      "id": "08_billing_skill",
+      "domain": "software",
+      "when_to_use": [
+        "un abonnement, un webhook ou une intégration Stripe doivent être conçus",
+        "une activation live de facturation doit être demandée pour approbation humaine"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\08_billing_skill.yaml"
+    },
+    {
+      "id": "09_seo_performance_skill",
+      "domain": "software",
+      "when_to_use": [
+        "un audit SEO, accessibilité ou Core Web Vitals est nécessaire avant ou après mise en ligne"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\09_seo_performance_skill.yaml"
+    },
+    {
+      "id": "10_devops_sre_skill",
+      "domain": "software",
+      "when_to_use": [
+        "un pipeline CI/CD ou une observabilité doivent être mis en place",
+        "un déploiement conséquent doit être préparé avec un plan de rollback avant demande d'approbation"
+      ],
+      "source_path": "DOMAINS\\software\\skills\\10_devops_sre_skill.yaml"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+id: 10_devops_sre
+name: DevOps / SRE
+purpose: CI/CD, observabilité, incidents, rollback et post-deployment checks
+requires_human: false
+tier: specialist
+requires_human_for:
+- level_3
+- level_4
+inputs:
+- iac_plan
+- deployment_plan
+- rollback_plan
+outputs:
+- ci_cd_pipeline
+- observability_config
+- deploy_report
+skills:
+- 10_devops_sre_skill
+tools:
+- read_context
+- write_project_files
+- prepare_deploy
+- request_production_deploy
+inspiration:
+  repo: https://github.com/All-Hands-AI/OpenHands
+  pattern: >
+    intégration terminal profonde pour gérer CI/CD, scripts de déploiement
+    et surveillance des logs ; repris comme boucle deploy -> observe ->
+    rollback si besoin, pas comme dépendance logicielle (aucun clone,
+    exécution 100% Claude Code, cf. CLAUDE.md racine).
