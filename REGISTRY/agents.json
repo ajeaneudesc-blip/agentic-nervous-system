@@ -144,13 +144,11 @@
         "orch-fix-defect",
         "orch-pipeline",
         "orch-refine-code",
-        "plan-canvas",
         "plan-orchestrate",
         "product-capability",
         "product-lens",
         "team-builder",
         "token-budget-advisor",
-        "agent:chief-of-staff",
         "agent:doc-updater",
         "agent:planner",
         "agent:spec-miner"

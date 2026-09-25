@@ -15,7 +15,6 @@ Référence à lire à la demande (pas par défaut) quand la tâche en cours tou
 - `skills/orch-fix-defect/SKILL.md`
 - `skills/orch-pipeline/SKILL.md`
 - `skills/orch-refine-code/SKILL.md`
-- `skills/plan-canvas/SKILL.md`
 - `skills/plan-orchestrate/SKILL.md`
 - `skills/product-capability/SKILL.md`
 - `skills/product-lens/SKILL.md`
@@ -23,7 +22,6 @@ Référence à lire à la demande (pas par défaut) quand la tâche en cours tou
 - `skills/token-budget-advisor/SKILL.md`
 
 ## Agents de référence
-- `agents/chief-of-staff.md`
 - `agents/doc-updater.md`
 - `agents/planner.md`
 - `agents/spec-miner.md`
